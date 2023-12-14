@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: sys as sysdba
+    password: 1
+    driver-class-name: oracle.jdbc.OracleDriver
+  aop:
+    proxy-target-class: false
+beetlsql:
+  sqlManagers: sqlManager1
+  sqlManager1:
+    ds: datasource
+    basePackage: com.sunq.learning.spring.transaction.dao
+    daoSuffix: Dao
+    dbStyle: org.beetl.sql.core.db.OracleStyle
